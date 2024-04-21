@@ -1,0 +1,26 @@
+body{
+    font-family: inherit;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Authorization{
+    width: 100%;
+    margin: 10px 0;
+    line-height: 1.5;
+    padding: 10px;
+}
+h2{
+    font-family: sans-serif;
+    text-align: center;
+}
+p{
+    font-family: sans-serif;
+}
+.edit{
+    width: 100%;
+    margin: 10px 0;
+    line-height: 1.5;
+    padding: 10px;
+}
