@@ -1,7 +1,12 @@
 <?php
 session_start();
 require_once 'connect.php';
-$login = $_SESSION['user']['user_login'];
+if($_POST['login_edit']==0 || $_POST['number_edit']==0 || $_POST['email_edit']==0 || $_POST['password_edit']==0){
+    
+    $_SESSION['massage'] = 'Введите все даныые';
+    header('Location: ../page.php');
+}else{
+    $login = $_SESSION['user']['user_login'];
 $new_login = $_POST['login_edit'];
 $new_number = $_POST['number_edit'];
 $new_email = $_POST['email_edit'];
@@ -23,5 +28,7 @@ if($connect->query($update_inf) === true){
     }
     
 }else{
-    echo 'не получилось';
+    $_SESSION['massage'] = 'Введите все даныые';
+    header('Location: ../page.php');
+}
 }
