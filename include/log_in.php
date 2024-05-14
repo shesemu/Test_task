@@ -28,7 +28,7 @@ $token = $_POST['smart-token'];
 $user_tel_or_email = $_POST['user_tel_or_email'];
 $password = $_POST['password'];
 $check_user_login = mysqli_query($connect, "SELECT * FROM test WHERE user_tel_number = '$user_tel_or_email' OR user_email = '$user_tel_or_email'");
-$check_password = mysqli_query($connect, "SELECT * FROM test WHERE password = '$password'");
+$check_password = mysqli_query($connect, "SELECT * FROM test WHERE password = '$password' OR (user_tel_number = '$user_tel_or_email' OR user_email = '$user_tel_or_email')");
 if (check_captcha($token)) {
     if(mysqli_num_rows($check_user_login)>0 ){
         if(mysqli_num_rows($check_password)>0)
